@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void displayAverageAcceleration(double &v1, double &v2, double &time, double &pecutan);
+void calculate(double &v1, double &v2, double &time,double &pecutan);
+void getdata(double &v1, double &v2, double &time);
+void main()
+{
+	double v1, v2, time, acceleration=0;
+	double pecutan = 0 ;
+
+	getdata(v1, v2, time);
+	calculate(v1,v2,time,pecutan);
+	displayAverageAcceleration(v1, v2, time, pecutan);
+
+
+}
+
+void getdata(double &v1, double &v2, double &time)
+{
+	cout << "Input the starting velocity (km/h) : "; cin >> v1;
+	cout << "Input the ending velocity (km/h) : "; cin >> v2;
+	cout << "Input the time span (s) : "; cin >> time;
+
+}
+
+void calculate(double &v1, double &v2, double &time, double &pecutan)
+{
+	pecutan = (v2 - v1) / (time);
+}
+
+void displayAverageAcceleration(double &v1, double &v2, double &time, double &pecutan)
+{
+	cout << "The average acceleration needed to accelerate a car from  " << v1;
+	cout << " km/h to " << v2 << " km/h in " << time << " seconds is " << pecutan << "m/s-2 \n";
+}
